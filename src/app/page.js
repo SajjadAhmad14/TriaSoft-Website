@@ -9,7 +9,7 @@ export default function Page() {
     <main className="flex flex-col h-screen">
       <div className=" min-h-[100vh]"
         style={{
-          background: 'radial-gradient(circle at top left, #ffffff 0%, #1E3A8A 30%, #1E3A8A 90%, #ffffff 100%)'
+          background: 'radial-gradient(circle at top left, #6ea8fe 0%, #0f2a5b 40%, #0f2a5b 80%, #3a6fd0 100%)'
         }}>
         <Navbar />
         <Home />

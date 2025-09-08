@@ -8,14 +8,20 @@ function Home() {
             className="w-full h-screen flex flex-col justify-center items-center text-center text-text-light px-4"
         >
             {/* Big Text */}
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
-                Smart Choices
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-center">
+                <span
+                    className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent"
+                >
+                    Smart Choices
+                </span>
                 <br />
-                For Your Business Growth
+                <span className="text-white">
+                    For Your Business Growth
+                </span>
             </h1>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-text-dark max-w-xl mb-8">
+            <p className="text-lg md:text-xl text-gray-400 max-w-xl mb-8">
                 We're a team of experienced designers, developers, and marketers,
                 passionate about delivering exceptional digital solutions.
             </p>
