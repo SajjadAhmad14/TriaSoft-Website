@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Project from "./components/Project";
@@ -17,6 +18,7 @@ export default function Page() {
         <Home />
         <Services />
         <Project />
+        <Footer />
       </div>
     </main>
   );
