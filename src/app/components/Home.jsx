@@ -36,9 +36,9 @@ function Home() {
             </a>
 
             <div className="relative w-full flex justify-center mt-36 mb-36">
-                <div className="relative z-10 w-8/12 rounded-3xl bg-blue-600 backdrop-blur-md shadow-lg p-12 text-center overflow-visible">
+                <div className="relative z-10 w-8/12 rounded-3xl bg-blue-900 backdrop-blur-md shadow-lg p-12 text-center overflow-visible">
 
-                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-3/4 h-12 rounded-t-3xl bg-blue-600 z-0 pointer-events-none" />
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-3/4 h-12 rounded-t-3xl bg-blue-900 z-0 pointer-events-none" />
 
                     <h3 className="relative text-3xl md:text-4xl font-bold text-white z-10">
                         Benefit of improving your business
