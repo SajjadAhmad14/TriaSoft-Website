@@ -1,8 +1,22 @@
 import React from 'react'
+import { useState, useEffect } from "react";
 
 function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     return (
-        <header className="fixed w-full top-0 z-50">
+        <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? "bg-blue-900/70 backdrop-blur-md shadow-md" : "bg-transparent"
+            }`}>
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 {/* Left: Logo */}
