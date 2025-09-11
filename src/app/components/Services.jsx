@@ -6,7 +6,7 @@ function Services() {
     return (
         <section
             id="services"
-            className="w-full flex flex-col items-center text-center px-6 py-40"
+            className="w-full flex flex-col items-center text-center px-6 py-40 scroll-mt-24"
             style={{
                 background: "linear-gradient(135deg, #0d1b2a 0%, #0f2a5b 40%, #1e40af 90%)",
             }}

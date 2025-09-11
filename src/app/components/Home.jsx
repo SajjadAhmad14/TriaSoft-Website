@@ -6,7 +6,7 @@ function Home() {
     return (
         <section
             id="hero"
-            className="w-full mt-60 flex flex-col justify-center items-center text-center text-text-light"
+            className="w-full mt-60 flex flex-col justify-center items-center text-center text-text-light scroll-mt-96"
         >
             {/* Big Text */}
             <h1 className="text-5xl md:text-6xl font-bold mb-4 text-center">

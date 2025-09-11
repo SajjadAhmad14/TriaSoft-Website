@@ -27,8 +27,8 @@ function Navbar() {
                 {/* Middle: Navbar */}
                 <nav className="hidden md:flex space-x-10">
                     <a href="#hero" className="text-white hover:text-orange-500 font-medium">Home</a>
-                    <a href="#about" className="text-white hover:text-orange-500 font-medium">Services</a>
-                    <a href="#services" className="text-white hover:text-orange-500 font-medium">Project</a>
+                    <a href="#services" className="text-white hover:text-orange-500 font-medium">Services</a>
+                    <a href="#projects" className="text-white hover:text-orange-500 font-medium">Project</a>
                     <a href="#portfolio" className="text-white hover:text-orange-500 font-medium">About Us</a>
                 </nav>
 

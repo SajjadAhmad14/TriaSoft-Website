@@ -13,7 +13,7 @@ function Project() {
     ];
 
     return (
-        <section className="w-full py-40 bg-gray-900 text-white">
+        <section className="w-full py-40 bg-gray-900 text-white scroll-mt-24" id="projects">
             <div className="max-w-6xl mx-auto px-6 text-center">
                 {/* Intro Text */}
                 <p className="text-xl md:text-2xl font-medium leading-relaxed mb-24">
