@@ -17,7 +17,7 @@ function Navbar() {
     return (
         <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? "bg-blue-900/70 backdrop-blur-md shadow-md" : "bg-transparent"
             }`}>
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
                 {/* Left: Logo */}
                 <div className="flex-shrink-0">
