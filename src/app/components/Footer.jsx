@@ -29,7 +29,7 @@ function Footer() {
                 </div>
 
                 {/* Right Section */}
-                <div className="w-full md:w-2/5 grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <div className="w-full md:w-2/5 grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8">
                     {/* Menu */}
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-4">Menu</h3>
