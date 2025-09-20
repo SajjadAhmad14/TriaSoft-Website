@@ -6,7 +6,7 @@ function Home() {
     return (
         <section
             id="hero"
-            className="w-full mt-32 md:mt-60 flex flex-col justify-center items-center text-center px-4"
+            className="w-full mt-32 md:mt-60 flex flex-col justify-center items-center text-center px-4 scroll-mt-124"
         >
             {/* Big Text */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
@@ -81,41 +81,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* Partner Logos */}
-            <div className="w-full bg-gray-950 py-8 sm:py-10 flex justify-center">
-                <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 max-w-6xl w-full px-4">
-                    <img
-                        src="/logos/airbnb.svg"
-                        alt="Airbnb"
-                        className="h-10 sm:h-16 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition"
-                    />
-                    <img
-                        src="/logos/badoo.svg"
-                        alt="Badoo"
-                        className="h-10 sm:h-16 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition"
-                    />
-                    <img
-                        src="/logos/google.svg"
-                        alt="Google"
-                        className="h-10 sm:h-16 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition"
-                    />
-                    <img
-                        src="/logos/microstation.svg"
-                        alt="Microstation"
-                        className="h-10 sm:h-16 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition"
-                    />
-                    <img
-                        src="/logos/porsche.svg"
-                        alt="Porsche"
-                        className="h-10 sm:h-16 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition"
-                    />
-                    <img
-                        src="/logos/slack.svg"
-                        alt="Slack"
-                        className="h-10 sm:h-16 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition"
-                    />
-                </div>
-            </div>
         </section>
     );
 }

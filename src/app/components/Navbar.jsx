@@ -50,7 +50,7 @@ function Navbar() {
                         Project
                     </a>
                     <a
-                        href="#contactus"
+                        href="#contact"
                         className="text-white hover:text-orange-500 font-medium"
                     >
                         Contact Us
@@ -59,7 +59,7 @@ function Navbar() {
 
                 {/* Desktop Button */}
                 <div className="hidden md:block">
-                    <a href="#contact">
+                    <a href="#">
                         <button className="bg-blue-600 hover:bg-blue-400 text-white font-semibold px-5 py-2 rounded-full">
                             Contact Us
                         </button>
@@ -103,12 +103,12 @@ function Navbar() {
                         Project
                     </a>
                     <a
-                        href="#contactus"
+                        href="#contact"
                         className="text-white font-medium hover:text-orange-500"
                     >
                         Contact Us
                     </a>
-                    <a href="#contact">
+                    <a href="#">
                         <button className="w-full bg-blue-600 hover:bg-blue-400 text-white font-semibold px-5 py-2 rounded-full">
                             Contact Us
                         </button>
