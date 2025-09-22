@@ -32,7 +32,7 @@ function Navbar() {
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex space-x-10">
                     <a
-                        href="#hero"
+                        href="#home"
                         className="text-white hover:text-orange-500 font-medium"
                     >
                         Home
