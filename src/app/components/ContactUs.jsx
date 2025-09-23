@@ -62,7 +62,7 @@ export default function ContactUs() {
         <section
             ref={vantaRef}
             id="contact"
-            className="relative w-full min-h-[700px] py-24 md:py-36 flex items-center justify-center overflow-hidden text-white"
+            className="relative w-full min-h-[700px] py-24 md:py-36 flex items-center justify-center overflow-hidden text-white scroll-mt-18"
         >
             {/* Dark overlay above animation */}
             <div className="absolute inset-0 bg-black/70 z-1 pointer-events-none"></div>
@@ -133,7 +133,7 @@ export default function ContactUs() {
                 </Tilt>
             </div>
 
-        
+
         </section>
 
     );

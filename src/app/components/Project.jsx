@@ -33,7 +33,7 @@ function Project() {
     return (
         <section
             id="projects"
-            className="relative w-full py-24 sm:py-32 lg:py-40 scroll-mt-24 overflow-visible"
+            className="relative w-full py-24 sm:py-32 lg:py-40 scroll-mt-18 overflow-visible"
             style={{
                 background: "radial-gradient(circle at top right, #0a0f24 0%, #01030a 100%)",
             }}

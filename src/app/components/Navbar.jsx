@@ -34,7 +34,7 @@ function Navbar() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex space-x-10">
-                    {["Home", "Services", "Projects", "Contact"].map((item) => (
+                    {["Home", "Services", "Projects", "Team", "Contact"].map((item) => (
                         <a
                             key={item}
                             href={`#${item.toLowerCase()}`}
@@ -74,7 +74,7 @@ function Navbar() {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className="md:hidden bg-gradient-to-b from-[#0a0f1f]/95 to-[#1a0f2f]/95 backdrop-blur-lg w-full px-6 py-6 flex flex-col space-y-6 animate-fadeIn">
-                    {["Home", "Services", "Projects", "Contact"].map((item) => (
+                    {["Home", "Services", "Projects", "Team", "Contact"].map((item) => (
                         <a
                             key={item}
                             href={`#${item.toLowerCase()}`}

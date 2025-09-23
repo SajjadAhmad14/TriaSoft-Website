@@ -34,8 +34,8 @@ export default function FoundersSection() {
 
     return (
         <section
-            id="founders"
-            className="relative w-full py-32 md:py-48 overflow-visible text-white"
+            id="team"
+            className="relative w-full py-32 md:py-48 overflow-visible text-white scroll-mt-18"
             style={{
                 background: "radial-gradient(circle at top right, #0a0f24 0%, #01030a 100%)",
             }}
@@ -105,6 +105,52 @@ export default function FoundersSection() {
           animation: float 4s ease-in-out infinite;
         }
       `}</style>
+
+
+
+
+    <div className="absolute bottom-0 w-full pointer-events-none overflow-hidden h-40">
+                {/* Layer 1: Large soft gradient orb */}
+                <svg className="absolute -left-1/4 w-[120%] h-40 opacity-30" viewBox="0 0 1200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="600" cy="80" r="120" fill="url(#orb1)" />
+                    <defs>
+                        <radialGradient id="orb1" cx="600" cy="80" r="120" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stopColor="#0a0f24" stopOpacity="0.8" />
+                            <stop offset="100%" stopColor="#01030a" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+
+                {/* Layer 2: Medium glowing ellipse cluster */}
+                <svg className="absolute left-0 w-full h-40 opacity-25" viewBox="0 0 1200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="300" cy="80" rx="150" ry="40" fill="url(#ellipse1)" />
+                    <ellipse cx="900" cy="80" rx="100" ry="25" fill="url(#ellipse2)" />
+                    <defs>
+                        <radialGradient id="ellipse1" cx="300" cy="80" r="150" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stopColor="#1a1f3b" stopOpacity="0.6" />
+                            <stop offset="100%" stopColor="#0a0f24" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="ellipse2" cx="900" cy="80" r="100" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stopColor="#2a2c50" stopOpacity="0.5" />
+                            <stop offset="100%" stopColor="#0a0f24" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+
+                {/* Layer 3: Small floating orbs for sparkle effect */}
+                <svg className="absolute w-full h-40" viewBox="0 0 1200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="60" r="5" fill="#3b3d63" opacity="0.5" />
+                    <circle cx="400" cy="100" r="3" fill="#4f4f7f" opacity="0.4" />
+                    <circle cx="600" cy="50" r="6" fill="#3b3d63" opacity="0.5" />
+                    <circle cx="800" cy="90" r="4" fill="#4f4f7f" opacity="0.3" />
+                    <circle cx="1000" cy="70" r="5" fill="#3b3d63" opacity="0.4" />
+                </svg>
+
+                {/* Layer 4: Wavy abstract line across full width */}
+                <svg className="absolute w-full h-20 bottom-0 opacity-20" viewBox="0 0 1200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 20C150 10 300 30 450 20C600 10 750 30 900 20C1050 10 1200 30 1200 20" stroke="#3b3d63" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+            </div>
         </section>
     );
 }
