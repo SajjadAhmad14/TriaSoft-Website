@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Globe2, DollarSign, Briefcase, Users } from "lucide-react";
+import IconBelt from "./IconBelt";
 
 function Home() {
     const benefits = [
@@ -27,11 +28,15 @@ function Home() {
     return (
         <section
             id="home"
-            className="relative w-full min-h-screen flex flex-col justify-center items-center px-6 py-32 overflow-hidden bg-gradient-to-b from-[#050510] via-[#0a0f24] to-[#01030a]"
+            className="relative w-full flex flex-col justify-center items-center px-6 py-32 bg-gradient-to-b from-[#050510] via-[#0a0f24] to-[#01030a]"
         >
-            {/* Glowing orbs background */}
-            <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-700/30 rounded-full blur-[180px] animate-pulse" />
-            <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-purple-700/20 rounded-full blur-[200px] animate-pulse" />
+
+            {/* Background abstract shapes */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-10 right-0 w-[32rem] h-[32rem] bg-purple-600/10 rounded-full blur-3xl animate-float delay-2000"></div>
+                <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl animate-float delay-1000"></div>
+            </div>
 
             {/* Content */}
             <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
@@ -111,11 +116,13 @@ function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 1.2 }}
-                className="absolute bottom-10 flex flex-col items-center z-20"
+                className="flex flex-col items-center z-20 pb-36"
             >
                 <div className="w-1 h-14 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full animate-bounce" />
                 <span className="text-gray-500 text-sm mt-2">Scroll Down</span>
             </motion.div>
+
+            <IconBelt />
         </section>
     );
 }

@@ -62,15 +62,10 @@ export default function ContactUs() {
         <section
             ref={vantaRef}
             id="contact"
-            className="relative w-full min-h-[700px] py-24 md:py-36 flex items-center justify-center overflow-hidden text-white scroll-mt-18"
+            className="relative w-full py-24 md:py-36 flex items-center justify-center text-white scroll-mt-18"
         >
             {/* Dark overlay above animation */}
             <div className="absolute inset-0 bg-black/70 z-1 pointer-events-none"></div>
-
-            {/* Floating abstract shapes */}
-            <div className="absolute -bottom-16 left-10 w-48 h-48 rounded-full bg-purple-700/20 blur-[120px] animate-pulse" />
-            <div className="absolute top-1/3 -right-16 w-64 h-64 rounded-full bg-blue-500/20 blur-[180px] animate-pulse" />
-            <div className="absolute bottom-0 right-1/3 w-32 h-32 rounded-full bg-pink-600/20 blur-[100px] animate-pulse" />
 
             <div className="relative z-10 max-w-6xl w-full px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Left panel: text content */}

@@ -4,8 +4,10 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --scrollbar-thumb: #0f3b99; /* dark bluish base */
-  --scrollbar-glow: #1e90ff;   /* neon glow */
+  --scrollbar-thumb: #0f3b99;
+  /* dark bluish base */
+  --scrollbar-glow: #1e90ff;
+  /* neon glow */
 }
 
 /* Base styles */
@@ -23,12 +25,15 @@ body {
 
 /* WebKit browsers */
 ::-webkit-scrollbar {
-  width: 12px; /* thin scrollbar */
-  background: transparent; /* hide track */
+  width: 12px;
+  /* thin scrollbar */
+  background: transparent;
+  /* hide track */
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* hide track */
+  background: transparent;
+  /* hide track */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -53,5 +58,23 @@ body {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) transparent; /* only thumb visible */
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+  /* only thumb visible */
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
 }

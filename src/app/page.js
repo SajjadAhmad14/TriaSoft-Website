@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import FoundersSection from "./components/FoundersSection";
 import Hero from "./components/Hero";
 import Home from "./components/Home";
+import IconBelt from "./components/IconBelt";
 import Navbar from "./components/Navbar";
 import Project from "./components/Project";
 import Services from "./components/Services";

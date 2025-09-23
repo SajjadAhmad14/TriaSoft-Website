@@ -40,9 +40,11 @@ function Project() {
         >
             {/* Floating abstract shapes */}
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl animate-float"></div>
+                <div className="absolute top-20 left-80 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl animate-float"></div>
                 <div className="absolute bottom-10 right-0 w-[32rem] h-[32rem] rounded-full bg-purple-600/10 blur-3xl animate-float delay-2000"></div>
                 <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-pink-500/10 blur-3xl animate-float delay-1000"></div>
+
+
             </div>
 
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
