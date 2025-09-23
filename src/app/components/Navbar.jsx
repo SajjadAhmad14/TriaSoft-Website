@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Bars3Icon } from "@heroicons/react/24/solid";
@@ -13,25 +14,26 @@ function Navbar() {
     }, []);
 
     useEffect(() => {
-        if (menuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
+        document.body.style.overflow = menuOpen ? "hidden" : "";
     }, [menuOpen]);
 
     const navItems = ["Home", "Services", "Projects", "Team"];
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setMenuOpen(false);
+    };
+
     return (
         <header
             className={`fixed w-full top-0 z-50 transition-all duration-500 ${scrolled
-                ? "bg-gradient-to-r from-[#0a0f1f]/90 to-[#1a0f2f]/90 backdrop-blur-xl shadow-2xl h-20 border-b border-cyan-500/20"
-                : "bg-transparent h-28"
+                    ? "bg-gradient-to-r from-[#0a0f1f]/90 to-[#1a0f2f]/90 backdrop-blur-xl shadow-2xl h-20 border-b border-cyan-500/20"
+                    : "bg-transparent h-28"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
                 {/* Logo */}
-                <div className="flex-shrink-0 transition-all duration-500">
+                <div className="flex-shrink-0 transition-all duration-500 cursor-pointer" onClick={scrollToTop}>
                     <img
                         src="mos.svg"
                         alt="Logo"
