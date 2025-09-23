@@ -1,27 +1,15 @@
 @import "tailwindcss";
 
-
+/* Theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --scrollbar-thumb: #0f3b99; /* dark bluish base */
+  --scrollbar-glow: #1e90ff;   /* neon glow */
 }
 
-@theme inline {
-  --color-primary: #66BB6A;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html{
+/* Base styles */
+html {
   scroll-behavior: smooth;
 }
 
@@ -31,3 +19,39 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ---------- NEON SCROLLBAR ---------- */
+
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* thin scrollbar */
+  background: transparent; /* hide track */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* hide track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    0 0 4px var(--scrollbar-glow),
+    0 0 8px var(--scrollbar-glow),
+    0 0 12px var(--scrollbar-glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-glow);
+  box-shadow:
+    0 0 6px var(--scrollbar-glow),
+    0 0 12px var(--scrollbar-glow),
+    0 0 18px var(--scrollbar-glow);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent; /* only thumb visible */
+}

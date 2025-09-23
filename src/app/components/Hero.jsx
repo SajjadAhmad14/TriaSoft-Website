@@ -63,10 +63,10 @@ export default function Hero() {
             className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-black"
         >
             {/* Dark radial gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-transparent z-0 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent z-1 pointer-events-none" />
 
             {/* Extra subtle vignette for focus */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.75)_0%,transparent_70%)] z-0 pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.75)_0%,transparent_70%)] z-1 pointer-events-none" />
 
             <motion.div
                 className="relative z-10 max-w-4xl px-6"
