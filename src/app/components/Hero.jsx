@@ -35,8 +35,8 @@ export default function Hero() {
                     mouseControls: true,
                     touchControls: true,
                     gyroControls: true,
-                    backgroundColor: 0x020205, // darker bluish
-                    color: 0x1e90ff, // neon blue points
+                    backgroundColor: 0x020205, // deep bluish-black
+                    color: 0x1e90ff, // neon blue
                     size: 1.0,
                     scale: 1.4,
                     scaleMobile: 1.0,
@@ -62,18 +62,22 @@ export default function Hero() {
             ref={vantaRef}
             className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-black"
         >
-            {/* Darker overlay */}
-            <div className="absolute inset-0 bg-black/90 z-0 pointer-events-none" />
+            {/* Dark radial gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-transparent z-0 pointer-events-none" />
+
+            {/* Extra subtle vignette for focus */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.75)_0%,transparent_70%)] z-0 pointer-events-none" />
 
             <motion.div
-                className="relative z-10 max-w-3xl px-6"
+                className="relative z-10 max-w-4xl px-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
                 <motion.h1
-                    className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
-                    style={{ textShadow: '0 0 15px rgba(0,0,0,0.7)' }}
+                    className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 
+          text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200 
+          drop-shadow-[0_0_15px_rgba(30,144,255,0.7)]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.3 }}
@@ -82,26 +86,29 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.p
-                    className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8"
-                    style={{ textShadow: '0 0 10px rgba(0,0,0,0.5)' }}
+                    className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-[0_0_10px_rgba(0,0,0,0.6)]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.6 }}
                 >
-                    We deliver custom software, web, and mobile solutions that drive growth and transform businesses.
+                    We deliver custom software, web, and mobile solutions that drive growth
+                    and transform businesses.
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.9 }}
-                    whileHover={{ scale: 1.07, rotate: 1 }}
+                    whileHover={{ scale: 1.08, rotate: 1 }}
                 >
                     <a
                         href="#contact"
-                        className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-700 to-blue-400 text-white font-semibold shadow-lg hover:shadow-blue-500/70 transition-transform"
+                        className="relative px-10 py-4 rounded-full text-white font-semibold shadow-lg 
+            bg-gradient-to-r from-blue-700 via-blue-600 to-violet-700 
+            hover:from-blue-500 hover:to-violet-500 transition-transform duration-300"
                     >
-                        Work With Us
+                        <span className="relative z-10">Work With Us</span>
+                        <span className="absolute inset-0 rounded-full bg-blue-500/30 blur-xl opacity-0 animate-pulse"></span>
                     </a>
                 </motion.div>
             </motion.div>

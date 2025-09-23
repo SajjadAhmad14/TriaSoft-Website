@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Tilt from "react-parallax-tilt";
 
 export default function ContactUs() {
     const vantaRef = useRef(null);
@@ -33,16 +34,16 @@ export default function ContactUs() {
                     el: vantaRef.current,
                     mouseControls: true,
                     touchControls: true,
-                    gyroControls: true,
-                    backgroundColor: 0x000000, // pure black
-                    color: 0x0a3d66,           // dimmed neon blue lines
-                    points: 20.0,
-                    maxDistance: 30.0,
-                    spacing: 18.0,
-                    showDots: false,           // no bright dots
+                    gyroControls: false,
+                    backgroundColor: 0x050715, // darker base
+                    color: 0x0a1a3f,           // very subtle lines
+                    points: 15.0,
+                    maxDistance: 20.0,
+                    spacing: 20.0,
+                    showDots: false,
                     showLines: true,
-                    lineWidth: 1.2,
-                    minDistance: 15,
+                    lineWidth: 0.5,
+                    minDistance: 12,
                     scale: 1.0,
                     scaleMobile: 1.0,
                 });
@@ -61,92 +62,79 @@ export default function ContactUs() {
         <section
             ref={vantaRef}
             id="contact"
-            className="relative w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-44 md:py-52 min-h-[1000px] text-white overflow-hidden"
+            className="relative w-full min-h-[700px] py-24 md:py-36 flex items-center justify-center overflow-hidden text-white"
         >
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/95 z-0 pointer-events-none"></div>
+            {/* Dark overlay above animation */}
+            <div className="absolute inset-0 bg-black/70 z-1 pointer-events-none"></div>
 
-            {/* Left panel - text with dark background */}
-            <div className="relative z-10 w-full md:w-1/2 flex flex-col items-center justify-center text-center px-4 md:px-8">
-                <div className="bg-black/70 px-8 py-8 rounded-xl">
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-snug mb-6 max-w-lg">
-                        Let’s Turn Your Ideas Into Reality
+            {/* Floating abstract shapes */}
+            <div className="absolute -bottom-16 left-10 w-48 h-48 rounded-full bg-purple-700/20 blur-[120px] animate-pulse" />
+            <div className="absolute top-1/3 -right-16 w-64 h-64 rounded-full bg-blue-500/20 blur-[180px] animate-pulse" />
+            <div className="absolute bottom-0 right-1/3 w-32 h-32 rounded-full bg-pink-600/20 blur-[100px] animate-pulse" />
+
+            <div className="relative z-10 max-w-6xl w-full px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {/* Left panel: text content */}
+                <div className="flex flex-col items-start justify-center space-y-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug text-white">
+                        Bring Your Ideas <span className="text-blue-400">to Life</span>
                     </h2>
-                    <p className="text-gray-300 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-lg">
-                        Whether you're a startup, a business, or an individual with a vision, we’ll
-                        bring your digital project to life with speed, professionalism, and
-                        creativity. Get in touch today and let’s build something extraordinary together!
+                    <p className="text-gray-300 text-base md:text-lg lg:text-xl leading-relaxed max-w-lg">
+                        Whether you're a startup, business, or visionary, we craft digital
+                        projects with creativity, speed, and professionalism. Let’s create
+                        something amazing together.
                     </p>
+                    <div className="flex space-x-4 mt-4">
+                        <div className="w-20 h-1 bg-blue-500 rounded-full animate-pulse"></div>
+                        <div className="w-10 h-1 bg-purple-500 rounded-full animate-pulse delay-200"></div>
+                        <div className="w-16 h-1 bg-pink-500 rounded-full animate-pulse delay-400"></div>
+                    </div>
                 </div>
-            </div>
 
-            {/* Right panel - contact form */}
-            <div className="relative z-10 w-full md:w-1/2 mt-20 md:mt-0 md:ml-16">
-                <div className="w-full bg-black/85 backdrop-blur-md px-12 md:px-16 py-16 md:py-20 rounded-3xl shadow-2xl border border-white/10">
-                    <h3 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-                        Ready to Start Your Project?
+                {/* Right panel: compact tilted form */}
+                <Tilt
+                    tiltEnable={true}
+                    tiltMaxAngleX={3}
+                    tiltMaxAngleY={3}
+                    glareEnable={true}
+                    glareMaxOpacity={0.05}
+                    className="w-full bg-gradient-to-r from-[#050715]/95 to-[#0a0f20]/95 backdrop-blur-md px-6 md:px-8 py-10 rounded-2xl shadow-2xl border border-white/10"
+                >
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white text-center">
+                        Let’s Talk!
                     </h3>
-                    <p className="text-gray-300 mb-10">
-                        Fill out the form below and let’s discuss how we can bring your ideas
-                        to life. Fast, professional, and tailored to your needs.
+                    <p className="text-gray-300 mb-6 text-center text-sm md:text-base">
+                        Share your vision, and let’s build something extraordinary.
                     </p>
 
-                    <form className="space-y-6">
-                        <div>
-                            <label className="block text-sm font-medium mb-2">Name</label>
-                            <input
-                                type="text"
-                                placeholder="Enter your name"
-                                className="w-full px-6 py-4 rounded-xl bg-gray-900/70 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium mb-2">Company</label>
-                            <input
-                                type="text"
-                                placeholder="Enter your company"
-                                className="w-full px-6 py-4 rounded-xl bg-gray-900/70 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium mb-2">Email Address</label>
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="w-full px-6 py-4 rounded-xl bg-gray-900/70 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium mb-2">Message</label>
-                            <textarea
-                                rows={5}
-                                placeholder="Your message here"
-                                className="w-full px-6 py-4 rounded-xl bg-gray-900/70 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white"
-                            ></textarea>
-                        </div>
+                    <form className="space-y-4">
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            className="w-full px-4 py-2 rounded-xl bg-gray-900/50 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white text-sm"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            className="w-full px-4 py-2 rounded-xl bg-gray-900/50 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white text-sm"
+                        />
+                        <textarea
+                            rows={3}
+                            placeholder="Your Message"
+                            className="w-full px-4 py-2 rounded-xl bg-gray-900/50 border border-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-white text-sm"
+                        />
 
                         <button
                             type="submit"
-                            className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 transition font-bold shadow-lg text-white text-lg"
+                            className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-500 hover:to-purple-600 transition font-bold shadow-lg text-white text-base"
                         >
-                            Submit
+                            Send Message
                         </button>
                     </form>
-                </div>
+                </Tilt>
             </div>
 
-            <style jsx>{`
-                @keyframes fadeIn {
-                    0% { opacity: 0; transform: translateY(20px); }
-                    100% { opacity: 1; transform: translateY(0); }
-                }
-                h2, p {
-                    animation: fadeIn 1s ease forwards;
-                }
-            `}</style>
+        
         </section>
+
     );
 }

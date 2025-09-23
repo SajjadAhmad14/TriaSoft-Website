@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "framer-motion": "^12.23.16",
+    "framer-motion": "^12.23.19",
     "lucide-react": "^0.543.0",
     "next": "15.5.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-parallax-tilt": "^1.7.309"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

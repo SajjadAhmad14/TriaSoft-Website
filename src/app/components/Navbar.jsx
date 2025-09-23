@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
-
-
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,50 +16,42 @@ function Navbar() {
 
     return (
         <header
-            className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-blue-900/70 backdrop-blur-md shadow-md"
-                    : "bg-transparent"
+            className={`fixed w-full top-0 z-50 transition-all duration-500 ${scrolled
+                    ? "bg-gradient-to-r from-[#0a0f1f]/95 to-[#1a0f2f]/95 backdrop-blur-lg shadow-lg h-20"
+                    : "bg-transparent h-28"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24">
+            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
                 {/* Logo */}
-                <div className="flex-shrink-0">
-                    <img src="mos.svg" alt="Logo" className="h-16 md:h-24" />
+                <div className="flex-shrink-0 transition-all duration-500">
+                    <img
+                        src="mos.svg"
+                        alt="Logo"
+                        className={`transition-all duration-500 ${scrolled ? "h-12" : "h-16 md:h-20"
+                            }`}
+                    />
                 </div>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex space-x-10">
-                    <a
-                        href="#home"
-                        className="text-white hover:text-orange-500 font-medium"
-                    >
-                        Home
-                    </a>
-                    <a
-                        href="#services"
-                        className="text-white hover:text-orange-500 font-medium"
-                    >
-                        Services
-                    </a>
-                    <a
-                        href="#projects"
-                        className="text-white hover:text-orange-500 font-medium"
-                    >
-                        Project
-                    </a>
-                    <a
-                        href="#contact"
-                        className="text-white hover:text-orange-500 font-medium"
-                    >
-                        Contact Us
-                    </a>
+                    {["Home", "Services", "Projects", "Contact"].map((item) => (
+                        <a
+                            key={item}
+                            href={`#${item.toLowerCase()}`}
+                            className="relative text-white/90 hover:text-white font-medium transition-colors duration-300"
+                        >
+                            {item}
+                            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    ))}
                 </nav>
 
                 {/* Desktop Button */}
                 <div className="hidden md:block">
-                    <a href="#">
-                        <button className="bg-blue-600 hover:bg-blue-400 text-white font-semibold px-5 py-2 rounded-full">
-                            Contact Us
+                    <a href="#contact">
+                        <button className="relative overflow-hidden bg-gradient-to-r from-blue-700 to-violet-700 hover:from-blue-500 hover:to-violet-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg transition-all duration-300">
+                            <span className="relative z-10">Contact Us</span>
+                            <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-violet-400/30 blur-xl opacity-0 hover:opacity-100 transition-opacity"></span>
                         </button>
                     </a>
                 </div>
@@ -83,33 +73,19 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-blue-900/90 backdrop-blur-md w-full px-6 py-4 flex flex-col space-y-4">
-                    <a
-                        href="#hero"
-                        className="text-white font-medium hover:text-orange-500"
-                    >
-                        Home
-                    </a>
-                    <a
-                        href="#services"
-                        className="text-white font-medium hover:text-orange-500"
-                    >
-                        Services
-                    </a>
-                    <a
-                        href="#projects"
-                        className="text-white font-medium hover:text-orange-500"
-                    >
-                        Project
-                    </a>
-                    <a
-                        href="#contact"
-                        className="text-white font-medium hover:text-orange-500"
-                    >
-                        Contact Us
-                    </a>
-                    <a href="#">
-                        <button className="w-full bg-blue-600 hover:bg-blue-400 text-white font-semibold px-5 py-2 rounded-full">
+                <div className="md:hidden bg-gradient-to-b from-[#0a0f1f]/95 to-[#1a0f2f]/95 backdrop-blur-lg w-full px-6 py-6 flex flex-col space-y-6 animate-fadeIn">
+                    {["Home", "Services", "Projects", "Contact"].map((item) => (
+                        <a
+                            key={item}
+                            href={`#${item.toLowerCase()}`}
+                            className="text-white font-medium hover:text-orange-500 transition-colors"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {item}
+                        </a>
+                    ))}
+                    <a href="#contact">
+                        <button className="w-full bg-gradient-to-r from-blue-700 to-violet-700 hover:from-blue-500 hover:to-violet-500 text-white font-semibold px-6 py-2 rounded-full shadow-md transition-all duration-300">
                             Contact Us
                         </button>
                     </a>
