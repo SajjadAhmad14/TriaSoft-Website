@@ -20,8 +20,8 @@ function Footer() {
                 {/* Left Section */}
                 <div className="w-full md:w-3/5 max-w-md">
                     {/* Logo + Company Name inside glowing card */}
-                    <div className="flex items-center gap-4 bg-gradient-to-r from-blue-600/90 to-purple-600/90 rounded-3xl shadow-2xl p-4 mb-8 ring-1 ring-white/20 hover:scale-105 transition-transform duration-300">
-                        <img src="mos.svg" alt="Logo" className="h-16 w-16 object-contain" />
+                    <div className="flex items-center gap-4 mb-8">
+                        <img src="logos/s.svg" alt="Logo" className="h-16 w-16 object-contain" />
                         <h2 className="text-2xl font-bold text-white tracking-wide">Tria Soft</h2>
                     </div>
 

@@ -35,9 +35,9 @@ function Navbar() {
                 {/* Logo */}
                 <div className="flex-shrink-0 transition-all duration-500 cursor-pointer" onClick={scrollToTop}>
                     <img
-                        src="mos.svg"
+                        src="logos/s.svg"
                         alt="Logo"
-                        className={`transition-all duration-500 ${scrolled ? "h-12" : "h-16 md:h-20"
+                        className={`transition-all duration-500 ${scrolled ? "h-10" : "h-14 md:h-14"
                             } drop-shadow-[0_0_15px_rgba(0,255,255,0.7)] hover:drop-shadow-[0_0_25px_rgba(0,255,255,0.9)]`}
                     />
                 </div>
