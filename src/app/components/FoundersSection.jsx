@@ -8,27 +8,27 @@ export default function FoundersSection() {
     const founders = [
         {
             name: "Sajjad Ahmed",
-            role: "Co-Founder & Visionary",
+            role: "Co-Founder & CEO",
             image: "/images/sajjad.jpg",
             linkedin: "https://www.linkedin.com/in/sajjadahmad14/overlay/contact-info/",
             github: "https://github.com/SajjadAhmad14",
             description: "Mastermind of strategy and digital innovation, shaping ideas into reality.",
         },
         {
+            name: "Mkrtich Sargsyan",
+            role: "Co-Founder, CTO & Lead Front End Developer",
+            image: "/images/mike.png",
+            linkedin: "https://www.linkedin.com/in/mkrtich-sargsyan/",
+            github: "https://github.com/example3",
+            description: "Building scalable solutions with precision, turning vision into seamless technology.",
+        },
+        {
             name: "Youcef Abdellani",
-            role: "Co-Founder & Creative Lead",
+            role: "Co-Founder, Technical Director & Lead Back End Developer",
             image: "/images/youcef.jpeg",
             linkedin: "https://www.linkedin.com/in/youcef-abdellani/",
             github: "https://github.com/ABDELLANI-Youcef",
             description: "Crafting visual experiences that elevate brands with creativity and elegance.",
-        },
-        {
-            name: "Mkrtich Sargsyan",
-            role: "Co-Founder & Tech Architect",
-            image: "/images/mike.jpg",
-            linkedin: "https://www.linkedin.com/in/mkrtich-sargsyan/",
-            github: "https://github.com/example3",
-            description: "Building scalable solutions with precision, turning vision into seamless technology.",
         },
     ];
 
