@@ -6,29 +6,58 @@ import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Project() {
-    const [activeFilter, setActiveFilter] = useState(null);
+    const filters = ["SaaS MVP", "Marketplaces", "Development"];
+    const [activeFilter, setActiveFilter] = useState(filters[0]);
 
-    const filters = [
-        "UX/UI Design",
-        "Digital Marketing",
-        "Sosmed Management",
-        "Development",
-    ];
 
     const projects = [
         {
-            title: "Project Title One",
-            description: "We are designed to help your business thrive in the online world.",
-            image: "/images/p1.jpeg",
-            link: "https://example.com/project1",
+            title: "Clarity API v1 — Community Management",
+            description: "Designed and shipped the first public API for Clarity’s nonprofit community platform.",
+            image: "/images/project_images/i1.jpeg",
+            link: "https://giveclarity.co",
+            category: "SaaS MVP",
         },
         {
-            title: "Project Title Two",
-            description: "We are designed to help your business thrive in the online world.",
-            image: "/images/p2.jpeg",
+            title: "Clarity — Subscription & Billing for Nonprofits",
+            description: "Built a production-ready subscription system for “Clarity,” a community-management platform for nonprofit organizations.",
+            image: "/images/project_images/i1.jpeg",
             link: "https://example.com/project2",
+            category: "SaaS MVP",
+        },
+        {
+            title: "Legacy Network",
+            description: "Developed the quiz game for users to learn more about crypto currency.It was an innovative idea to educate new users about how the crypto currencies works.",
+            image: "/images/project_images/i3.jpeg",
+            link: "https://www.legacynetwork.io/",
+            category: "Development",
+        },
+        {
+            title: "Dohrnii",
+            description: "A community platform allowing users to join via Mailchimp, participate in quizzes, ask and vote on AMA questions, and access dynamically managed blogs, with Firebase authentication",
+            image: "/images/project_images/i4.jpeg",
+            link: "https://dohrnii.io/",
+            category: "Development",
+        },
+        {
+            title: "Project Five — E-commerce Platform",
+            description: "Custom-built e-commerce platform optimized for conversions and mobile responsiveness.",
+            image: "/images/p2.jpeg",
+            link: "https://example.com/project5",
+            category: "Marketplaces",
+        },
+        {
+            title: "Project Six — Internal Dev Platform",
+            description: "Internal platform for managing microservices and automating deployments in a scalable environment.",
+            image: "/images/p1.jpeg",
+            link: "https://example.com/project6",
+            category: "Marketplaces",
         },
     ];
+
+    const filteredProjects = activeFilter
+        ? projects.filter((project) => project.category === activeFilter)
+        : projects;
 
     return (
         <section
@@ -43,8 +72,6 @@ function Project() {
                 <div className="absolute top-20 left-80 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl animate-float"></div>
                 <div className="absolute bottom-10 right-0 w-[32rem] h-[32rem] rounded-full bg-purple-600/10 blur-3xl animate-float delay-2000"></div>
                 <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-pink-500/10 blur-3xl animate-float delay-1000"></div>
-
-
             </div>
 
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -112,12 +139,12 @@ function Project() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
-                    className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-16 sm:mb-20 md:mb-24"
+                    className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-16 sm:mb-20 md:mb-12"
                 >
                     {filters.map((filter, idx) => (
                         <button
                             key={idx}
-                            onClick={() => setActiveFilter(filter)}
+                            onClick={() => setActiveFilter(activeFilter === filter ? null : filter)}
                             className={`px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${activeFilter === filter
                                 ? "bg-blue-500 text-white shadow-lg"
                                 : "bg-white/10 text-gray-200 hover:bg-blue-500 hover:text-white"
@@ -129,8 +156,8 @@ function Project() {
                 </motion.div>
 
                 {/* Project Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12">
-                    {projects.map((project, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 lg:px-20">
+                    {filteredProjects.map((project, idx) => (
                         <Tilt
                             key={idx}
                             tiltEnable={true}
@@ -140,7 +167,7 @@ function Project() {
                             glareMaxOpacity={0.05}
                             className="rounded-3xl shadow-xl p-3 sm:p-4 overflow-hidden bg-gradient-to-r from-[#0a0f1f]/95 to-[#1a0f2f]/95 transition-colors duration-300 hover:from-[#10132b]/95 hover:to-[#21133c]/95"
                         >
-                            <div className="relative w-full h-64 sm:h-80 md:h-[28rem] lg:h-[30rem] rounded-3xl overflow-hidden">
+                            <div className="relative w-full h-56 sm:h-64 lg:h-72  rounded-3xl overflow-hidden">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
